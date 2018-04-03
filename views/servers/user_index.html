@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block main %} 
+<ol class="breadcrumb">
+    <li><a href="/admin">用户管理</a></li>
+    <li><span>用户列表</span></li>
+</ol>
+<h2>用户列表</h2>
+<table class="table table-hover">
+    <tr>
+        <th>ID</th>
+        <th>管理员</th>
+        <th>权限</th>
+        <th>操作</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{user._id.toString()}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.isManage}}</td>
+        <td>
+          <a href="/admin/user/edit?id={{user._id.toString()}}">修改密码</a>
+          <a href="/admin/user/delete?id={{user._id.toString()}}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+    {% include '../components/page.html' %}
+{% endblock %}

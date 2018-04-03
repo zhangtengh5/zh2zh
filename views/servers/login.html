@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/public/css/admin.css">
+  <link rel="stylesheet" href="/public/libs/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron login">
+      <h1>掌腾官网后台登录系统</h1>
+      <div class="form-box">
+        <div class="alert alert-danger" role="alert" style="display:none"></div>
+        <form method="post" action="/api/user/login" id="login">
+          <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="用户名">
+          </div>
+          <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="密码">
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Check me out
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">登录</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="/public/js/jquery-1.10.1.min.js"></script>
+  <script src="/public/libs/bootstrap/js/bootstrap.min.js"></script>
+  
+  <script>
+    $('#login').on('submit', function(event){
+      $.ajax({
+           type: "post",
+           url: "/api/user/login",
+           data: {
+                username: $('#username').val(),
+                password: $('#password').val()
+           },
+           dataType: "json"
+       }).success(function(data) {
+          console.log(data.message)
+          if(!data.code) {
+            $('.alert').hide();
+            window.location.href= "/admin"
+          } else {
+            $('.alert').show();
+            $('.alert').html(data.message);
+          }
+       }).fail(function(err){
+          $('.alert').show();
+          $('.alert').html('网络故障，请稍后刷新页面')
+       }) 
+      event.preventDefault();
+    })
+  </script>
+</body>
+</html>

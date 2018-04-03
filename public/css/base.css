@@ -1,0 +1,202 @@
+@font-face {
+  font-family: 'PingFang Medium';
+  src: url('../fonts/PingFang Medium.eot');
+  src: 
+    url('../fonts/PingFang Medium.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/PingFang Medium.woff') format('woff'),
+    url('../fonts/PingFang Medium.ttf') format('truetype'),
+    url('../fonts/PingFang Medium.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+html {
+  border: 0;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "苹方 中等","PingFang Medium","microsoft yahei", "微软雅黑";
+  -webkit-text-size-adjust: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 0;
+  width: 100%;
+  position: relative;
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+}
+
+img {
+  height: auto;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover,
+a:focus {
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:active {
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+.table {
+  display: table;
+  width: 100%;
+}
+
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+input[type=text],
+button {
+  outline: none;
+  border: none;
+}
+input::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #ccc;
+}
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #ccc;
+}
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #ccc;
+}
+input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #ccc;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  outline: none;
+}
+
+img {
+  border: 0px;
+}
+
+a:link {
+  text-decoration: none;
+  outline: none;
+}
+
+a:visited {
+  text-decoration: none;
+  outline: none;
+}
+
+a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+input {
+  background: transparent;
+  padding: 0px;
+  font-size: 12px;
+  font-family: Arial, "微软雅黑";
+  color: #888;
+  outline: none;
+  border: 0px;
+}
+
+em {
+  font-style: normal;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}

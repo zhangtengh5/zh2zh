@@ -1,0 +1,33 @@
+{% extends './news_layout.html' %}
+{% block news %}
+    <div class="imgshow">
+        <img src="/public/images/news.png"/>
+    </div>
+    <div class="newsList">
+        {% for content in contents %}
+        <dl>
+            <dt>
+                <a href="/news/detail?page={{page}}&id={{content._id.toString()}}">
+                    <img src="{{content.image}}">
+                </a>
+            </dt>
+            <dd>
+                <h2>
+                    <a href="/news/detail?page={{page}}&id={{content._id.toString()}}" title= "{{content.title}}">	
+                        {{content.title}}
+                    </a>
+                </h2>
+                <p>
+                   {{content.describtion}}
+                </p>
+                <a href="/news/detail?page={{page}}&id={{content._id.toString()}}" class="more">查看详情</a><span class="time">{{content.addTime|date('Y-m-d', -8*60)}}</span>
+            </dd>
+        </dl>
+        {% endfor %}
+    </div>
+    {% include '../../components/page.html' %}
+{% endblock%}
+{% block _script %}
+
+{% endblock %}
+

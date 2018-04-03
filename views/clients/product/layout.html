@@ -1,0 +1,83 @@
+{% extends '../layout/layout.html' %}
+{% block link %}
+    {% block _link %}{% endblock %}
+{% endblock %}
+{% block content %}
+<div class="about-contents" id="product-wrapper">
+    <div class="n_cont">
+        <div class="wrap clearfix">
+            <article class="oh">
+                {% block mainContent %}{% endblock %}
+                <aside>
+                    <div class="T">
+                        产品中心
+                        <em>Product</em>
+                    </div>
+                    <ul class="aside_menu">
+                        <li class="cur">
+                            <a href="/product">产品方案</a>
+                            <dl>
+                                <dd>
+                                    <a href="/product/product?id=0">掌静脉识别原理</a>
+                                </dd>
+                                <dd>
+                                    <a href="/product/product?id=1">地铁通行方案</a>
+                                </dd>
+                                <dd>
+                                    <a href="/product/product?id=2">无人超市方案</a>
+                                </dd>
+                                <dd>
+                                    <a href="/product/product?id=3">认证合一方案</a>
+                                </dd>
+                                <dd>
+                                    <a href="/product/product?id=4">系统管理方案</a>
+                                </dd>
+                                <dd>
+                                    <a href="/product/product?id=5">商业支付方案</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </aside>
+            </article>
+            <div id="rightText">
+                <div class="top">
+                    <strong> Technology </strong>
+                    changes
+                    <strong> World</strong>
+                </div>
+                <div class="bottom">
+                    <strong> Palm Vein </strong> changes
+                    <strong>Life</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script>
+        function handleHref () {
+            var href = window.location.href;
+            var a = href.lastIndexOf('/')+1;
+            var b = href.lastIndexOf('?');
+            var str = '';
+            if (b !== -1) {
+                str = href.substring(a, b);
+            } else {
+                str = href.substring(a);
+            }
+            return str;
+        }
+        var params = handleHref();
+        var _indexStr = window.location.search;
+        var _index = Number(_indexStr.replace(/\?/, '').split('=')[1]) || 0;
+        switch(params) {
+            case 'product':
+                $('.aside_menu >li').eq(0).find('dl > dd').eq(_index).addClass('cur')
+            break;
+            default:
+                $('.aside_menu >li').eq(0).find('dl > dd').eq(_index).addClass('cur')
+        }
+    </script>
+{% endblock %}

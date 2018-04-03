@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit" />
+    <title>上海掌腾信息科技有限公司</title>
+    <meta name="keywords" content="上海掌腾信息科技有限公司，掌腾智能，掌静脉，掌纹识别" />
+    <meta name="description" content="掌腾公司作为一家高科技公司，以生物识别技术为核心，着眼于打造生物识别的支付生态，有志于成为该领域领航者" />
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="/public/libs/bootstrap/css/bootstrap.min.css">
+    <link href="/public/css/base.css" rel="stylesheet">
+    <link href="/public/css/header.css" rel="stylesheet" />
+    <link href="/public/css/template.css" rel="stylesheet" />
+    <link href="/public/css/content.css" rel="stylesheet" />
+    <script src="/public/js/jquery-1.10.1.min.js"></script>
+    <script src="/public/libs/bootstrap/js/bootstrap.min.js"></script>
+    {% block link %}{% endblock %}
+</head>
+
+<body>
+    <div class="about-wrapper">
+        {% include '../layout/header.html' %}
+        {% block content %}{% endblock %}
+        {% include '../layout/footer.html' %}
+        {% include '../../components/back.html' %}
+    </div>
+    <script src="/public/js/nav.js"></script>
+    {% block script %}{% endblock %}
+</body>
+</html>

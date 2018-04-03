@@ -1,0 +1,262 @@
+/* nav */
+
+.headDiv {
+  background: #FFF;
+  position: fixed;
+  z-index: 1130;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100px;
+  -webkit-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+}
+
+.headDiv.on {
+  background: rgba(255, 255, 255, 0.9);
+}
+.headDiv .headDiv-nav {
+  width: 1160px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
+.headDiv-nav .logo {
+  float: left;
+  width: 180px;
+  height: 100px;
+  margin-right: 33px;
+}
+.headDiv-nav .logo img {
+  width: 180px;
+  height: 48px;
+  margin-top: 26px;
+}
+.nav {
+  float: left;
+}
+.nav ul > li {
+  float: left;
+  padding-right: 1px;
+}
+
+.nav a {
+  display: block;
+  float: left;
+  height: 100px;
+  line-height: 100px;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+}
+
+.nav a em {
+  display: block;
+  height: 100px;
+  position: relative;
+  top: 0px;
+  padding: 0 20px;
+  font-size: 18px;
+  -webkit-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+}
+
+.nav a div {
+  height: 100px;
+  position: relative;
+  top: 0px;
+  color: #FFF;
+  background: #00b0ec;
+  padding: 0 25px;
+  font-size: 18px;
+  font-weight: 500;
+  -webkit-transition: All 0.5s ease;
+  transition: All 0.5s ease;
+}
+
+.nav a i {
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 0;
+  height: 3px;
+  border-bottom: 2px solid #fff;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+.nav a:hover em,
+.nav a:hover div {
+  top: -100px;
+}
+.nav a:hover div i{
+  width: 100%;
+}
+.head-space {
+  height: 100px;
+}
+/* social-box */
+.social-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100px;
+  overflow: hidden;
+}
+.social-box .social-title-active,
+.social-box .social-title {
+  font-size: 18px;
+  height: 100px;
+  padding: 0 20px;
+  line-height: 100px;
+  text-align: center;
+  position: relative;
+  top: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.social-box .social-title-active b,
+.social-box .social-title b {
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 0;
+  height: 3px;
+  border-bottom: 2px solid #fff;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+.social-box .social-title-active {
+  background: #00b0ec;
+}
+.social-box .social-title-active span {
+  color: #fff;
+}
+.social-contents {
+  right: 0;
+  position: absolute;
+  top: 100px;
+  width: 380px;
+  height: 330px;
+  background: #fff;
+  padding: 15px;
+  z-index: 9999;
+  border-left: 1px solid #f7f7f7;
+  border-right: 1px solid#f7f7f7;
+  border-bottom: 1px solid #f7f7f7;
+  display: none;
+}
+.social-contents-active {
+  display: block;
+}
+.social-contents > li {
+  width: 100%;
+  height: 150px;
+  border-bottom: 1px dotted #f4f4f4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.social-contents > li:last-child {
+  border: none;
+}
+.social-contents > li .li-left,
+.social-contents > li .li-right {
+  float: left;
+  width: 174px;
+  height: 150px;
+  text-align: center;
+}
+.social-contents > li .li-left h2,
+.social-contents > li .li-right h2 {
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+}
+.social-contents > li .li-left img,
+.social-contents > li .li-right img{
+  width: 100px;
+  height: 100px;
+}
+.social-contents:hover {
+  display: block;
+}
+.social-box:hover .social-title,
+.social-box:hover .social-title-active {
+  top: -100px;
+}
+.social-box:hover .social-title-active b {
+  width: 100%;
+}
+/* navEnd */
+
+
+/* footer */
+.footer {
+  width: 100%;
+  height: 160px;
+  clear: both;
+  background:#888;
+  position: relative;
+}
+
+.footDiv {
+  width: 1200px;
+  height: 160px;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+  padding-top: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.footDiv .tel {
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+}
+.footDiv .copyright {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.footDiv a {
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+}
+.footDiv .share-code {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  right: 0;
+  top: 50%;
+  margin-top: -40px;
+}
+.footDiv .share-code img {
+  width: 100%;
+  height: 100%;
+}
+/* footerEnd */
+
+
+/* back-top */
+.back-top {
+  position: fixed;
+  right: 5px;
+  bottom: 50px;
+  width: 46px;
+  height: 46px;
+  z-index: 9999;
+  display: none;
+}
+.back-top img {
+  width: 100%;
+  height: 100%;
+}
+/* back-top End*/

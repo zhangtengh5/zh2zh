@@ -1,0 +1,79 @@
+{% extends '../layout/layout.html' %}
+{% block link %}
+    {% block _link %}{% endblock %}
+{% endblock %}
+{% block content %}
+<div class="about-contents" id="contact-wrapper">
+    <div class="n_cont">
+        <div class="wrap clearfix">
+            <article class="oh">
+                {% block mainContent %}{% endblock %}
+                <aside>
+                    <div class="T">
+                        联系我们
+                        <em>Contact</em>
+                    </div>
+                    <ul class="aside_menu">
+                        <li>
+                            <a href="/contact/contact">联系我们</a>
+                        </li>
+                    </ul>
+                    <div class="HR-box">
+                        <h2 class="HR-title"><strong>项目总监电话：</strong></h2>
+                        <div class="HR-content"><i></i>18149772839（王先生）</div>
+                    </div>
+                    <div class="HR-box">
+                        <h2 class="HR-title"><strong>市场总监邮箱：</strong></h2>
+                        <div class="HR-content"><i></i>liweizhen@zh2zh.com(李小姐)</div>
+                    </div>
+                    <div class="HR-box">
+                        <h2 class="HR-title"><strong>公司电话：</strong></h2>
+                        <div class="HR-content"><i></i>(021)62875088</div>
+                    </div>
+                    <div class="HR-box">
+                        <h2 class="HR-title"><strong>公司邮箱：</strong></h2>
+                        <div class="HR-content"><i></i>zh2zh@zh2zh.com</div>
+                    </div>
+                </aside>
+            </article>
+            <div id="rightText">
+                <div class="top">
+                    <strong> Technology </strong>
+                    changes
+                    <strong> World</strong>
+                </div>
+                <div class="bottom">
+                    <strong> Palm Vein </strong> changes
+                    <strong>Life</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script>
+        function handleHref () {
+            var href = window.location.href;
+            var a = href.lastIndexOf('/')+1;
+            var b = href.lastIndexOf('?');
+            var str = '';
+            
+            if (b !== -1) {
+                str = href.substring(a, b);
+            } else {
+                str = href.substring(a);
+            }
+            return str;
+        }
+        var params = handleHref();
+        switch(params) {
+            case 'contact':
+            $('.aside_menu >li').eq(0).addClass('cur')
+            break;
+            default:
+            $('.aside_menu >li').eq(0).addClass('cur')
+        }
+    </script>
+    {% block _script %}{% endblock %}
+{% endblock %}

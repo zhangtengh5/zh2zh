@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+{% block main %}
+<ol class="breadcrumb">
+    <li><a href="/admin/news">新闻管理</a></li>
+    <li><span>新闻列表</span></li>
+</ol>
+<table class="table table-hover table-bordered">
+  <tr class="active">
+    <td style="display:none">ID</td>
+    <td>新闻标题</td>
+    <td>发布时间</td>
+    <td>操作</td>
+  </tr>
+  {% for content in contents %}
+  <tr>
+    <td style="display:none">{{content._id.toString()}}</td>
+    <td>{{content.title}}</td>
+    <td>{{content.addTime|date('Y-m-d H:i:s', -8*60)}}</td>
+    <td>
+      <a href="/admin/news/edit?id={{content._id.toString()}}">编辑</a>
+      <a href="/admin/news/delete?id={{content._id.toString()}}">删除</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+  {% include '../components/page.html' %}
+{% endblock %}

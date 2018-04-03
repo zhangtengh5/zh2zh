@@ -1,0 +1,74 @@
+{% extends '../layout/layout.html' %}
+{% block link %}
+    {% block _link %}{% endblock %}
+{% endblock %}
+{% block script %}
+    {% block _script %}{% endblock %}
+{% endblock %}
+{% block content %}
+<div class="about-contents" id="career-wrapper">
+    <div class="n_cont">
+        <div class="wrap clearfix">
+            <article class="oh">
+                {% block mainContent %}{% endblock %}
+                <aside>
+                    <div class="T">
+                        求贤纳才
+                        <em>Career</em>
+                    </div>
+                    <ul class="aside_menu">
+                        <li>
+                            <a href="/career/career">人才招聘</a>
+                        </li>                    
+                    </ul>
+                    <div class="HR-box">
+                        <h2 class="HR-title"><strong>HR电话：</strong></h2>
+                        <div class="HR-content"><i></i>(021)62875088</div>
+                    </div>
+                    <div class="HR-box">
+                        <h2 class="HR-title"><strong>HR邮箱：</strong></h2>
+                        <div class="HR-content"><i></i>zh2zh@zh2zh.com</div>
+                    </div>
+                </aside>
+            </article>
+            <div id="rightText">
+                <div class="top">
+                    <strong> Technology </strong>
+                    changes
+                    <strong> World</strong>
+                </div>
+                <div class="bottom">
+                    <strong> Palm Vein </strong> changes
+                    <strong>Life</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script>
+        function handleHref () {
+            var href = window.location.href;
+            var a = href.lastIndexOf('/')+1;
+            var b = href.lastIndexOf('?');
+            var str = '';
+            
+            if (b !== -1) {
+                str = href.substring(a, b);
+            } else {
+                str = href.substring(a);
+            }
+            return str;
+        }
+        var params = handleHref();
+        switch(params) {
+            case 'career':
+            $('.aside_menu >li').eq(0).addClass('cur')
+            break;
+            default:
+            $('.aside_menu >li').eq(0).addClass('cur')
+        }
+    </script>
+    {% block _script %}{% endblock %}
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends '../layout/layout.html' %}
+{% block link %}
+    {% block _link %}{% endblock %}
+{% endblock %}
+{% block script %}
+    {% block _script %}{% endblock %}
+{% endblock %}
+{% block content %}
+<div class="about-contents" id="news-wrapper">
+    <div class="n_cont">
+        <div class="wrap clearfix">
+            <article class="oh">
+                {% block mainContent %}{% endblock %}
+                <aside>
+                    <div class="T">
+                        新闻中心
+                        <em>News</em>
+                    </div>
+                    {% block menu %}{% endblock%}
+                </aside>
+            </article>
+            <div id="rightText">
+                <div class="top">
+                    <strong> Technology </strong>
+                    changes
+                    <strong> World</strong>
+                </div>
+                <div class="bottom">
+                    <strong> Palm Vein </strong> changes
+                    <strong>Life</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

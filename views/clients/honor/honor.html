@@ -1,0 +1,93 @@
+{% extends './honor_layout.html' %}
+{% block _link %}
+<link rel="stylesheet" href="/public/libs/fancybox/jquery.fancybox.min.css">
+{% endblock %}
+{% block mainContent %}
+<div class="main">
+  <div class="channelT pr">
+      <h1 class="l N">专利技术</h1>
+      <div id="switcher" class="r switcher">
+          <a class="ico ico5_1" id="big"></a>
+          <a class="ico ico5_2"></a>
+          <a class="ico ico5_3" id="small"></a>
+      </div>
+  </div>
+  <div class="honor">
+      <ul class="honor-lists">
+          <li class="honor-list">
+              <a href="/public/images/201709201016191208134403.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/201709201016191208134403.jpg" alt="">
+                  </div>
+              </a>
+              <p>基于掌静脉进行银行卡操作的快捷交易系统</p>
+          </li>
+          <li class="honor-list">
+              <a href="/public/images/2017092010552532084267.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/2017092010552532084267.jpg" alt="">
+                  </div>
+              </a>
+              <p>基于常客信息的地铁支付系统</p>
+          </li>
+          <li class="honor-list">
+              <a href="/public/images/20170920105400230759728.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/20170920105400230759728.jpg" alt="">
+                  </div>
+              </a>
+              <p>基于掌静脉的便携式智能支付终端</p>
+          </li>
+          <li class="honor-list last">
+              <a href="/public/images/20170515060852900122464.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/20170515060852900122464.jpg" alt="">
+                  </div>
+              </a>
+              <p>基于掌纹掌脉融合识别技术的泛地铁支付系统</p>
+          </li>
+          <li class="honor-list">
+              <a href="/public/images/201705150609151831556382.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/201705150609151831556382.jpg" alt="">
+                  </div>
+              </a>
+              <p>基于掌纹掌脉身份认证的室内定位导航系统</p>
+          </li>
+              
+          <li class="honor-list">
+              <a href="/public/images/201703131206201556065049.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/201703131206201556065049.jpg" alt="">
+                  </div>
+              </a>
+              <p>掌腾掌付卡（ios版）应用软件V1.0</p>
+          </li>
+          <li class="honor-list">
+              <a href="/public/images/20170313120937573964324.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/20170313120937573964324.jpg" alt="">
+                  </div>
+              </a>
+              <p>掌腾掌付卡（安卓版）应用软件V1.0</p>
+          </li>
+          <li class="honor-list last">
+              <a href="/public/images/20170313121232726818068.jpg" data-fancybox="images">
+                  <div>
+                      <img src="/public/images/20170313121232726818068.jpg" alt="">
+                  </div>
+              </a>
+              <p>掌腾掌付卡（服务端）应用软件V1.0</p>
+          </li>
+      </ul>
+  </div>
+</div>
+{% endblock%}
+{% block _script %}
+<script src="/public/libs/fancybox/jquery.fancybox.min.js"></script>
+<script>
+    $("[data-fancybox]").fancybox({
+        toolbar: false
+    });
+</script>
+{% endblock %}

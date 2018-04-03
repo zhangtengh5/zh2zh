@@ -1,0 +1,76 @@
+{% extends '../layout/layout.html' %}
+{% block link %}
+    {% block _link %}{% endblock %}
+{% endblock %}
+{% block content %}
+<div class="about-contents" id="about-wrapper">
+    <div class="n_cont">
+        <div class="wrap clearfix">
+            <article class="oh">
+                {% block mainContent %}{% endblock %}
+                <aside>
+                    <div class="T">
+                        走进掌腾
+                        <em>About</em>
+                    </div>
+                    <ul class="aside_menu">
+                        <li>
+                            <a href="/about/about">关于掌腾</a>
+                        </li>
+                        <li>
+                            <a href="/about/road">掌腾之路</a>
+                        </li>
+                        <li>
+                            <a href="/about/team">核心团队</a>
+                        </li>
+                    </ul>
+                </aside>
+            </article>
+            <div id="rightText">
+                <div class="top">
+                    <strong> Technology </strong>
+                    changes
+                    <strong> World</strong>
+                </div>
+                <div class="bottom">
+                    <strong> Palm Vein </strong> changes
+                    <strong>Life</strong>.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+    <script src="/public/js/about.js"></script>
+    <script>
+        function handleHref () {
+            var href = window.location.href;
+            var a = href.lastIndexOf('/')+1;
+            var b = href.lastIndexOf('?');
+            var str = '';
+            
+            if (b !== -1) {
+                str = href.substring(a, b);
+            } else {
+                str = href.substring(a);
+            }
+            return str;
+        }
+        var params = handleHref();
+        switch(params) {
+          case 'about':
+            $('.aside_menu >li').eq(0).addClass('cur')
+            break;
+          case 'road':
+            $('.aside_menu >li').eq(1).addClass('cur')
+            break;
+          case 'team':
+            $('.aside_menu >li').eq(2).addClass('cur')
+            break;
+          default:
+            $('.aside_menu >li').eq(0).addClass('cur')
+        }
+    </script>
+    {% block _script %}{% endblock %}
+{% endblock %}

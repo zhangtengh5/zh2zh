@@ -1,0 +1,23 @@
+{% extends './layout.html' %}
+{% block _link %}{% endblock %}
+{% block _script %}{% endblock %}
+{% block menu %}
+<ul class="aside_menu">
+    <li class="cur">
+        <a href="/news?page=1">掌腾新闻</a>
+    </li>
+</ul>
+{% endblock %}
+{% block mainContent %}
+<div class="main">
+    <div class="channelT pr">
+        <h1 class="l N">掌腾新闻</h1>
+        <div id="switcher" class="r switcher">
+            <a class="ico ico5_1" id="big"></a>
+            <a class="ico ico5_2"></a>
+            <a class="ico ico5_3" id="small"></a>
+        </div>
+    </div>
+    {% block news %}{% endblock%}
+</div>
+{% endblock%}

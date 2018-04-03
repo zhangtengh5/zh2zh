@@ -1,14 +1,14 @@
 {
-  "name": "zt_pc",
+  "name": "zh2zh",
   "version": "1.0.0",
-  "description": "",
+  "description": "this a PCItem about ZhangTeng",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "SET NODE_ENV=production&&supervisor –harmony app",
     "start": "supervisor –harmony app"
   },
-  "author": "",
+  "author": "shaohua",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -34,5 +34,13 @@
   "devDependencies": {
     "markdown": "^0.5.0",
     "minimist": "^1.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuaxing/zh2zh.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshuaxing/zh2zh/issues"
+  },
+  "homepage": "https://github.com/joshuaxing/zh2zh#readme"
 }

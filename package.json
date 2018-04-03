@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "SET NODE_ENV=production&&supervisor –harmony app",
+    "build": "SET NODE_ENV=production&&pm2 start app.js",
     "start": "supervisor –harmony app"
   },
   "author": "shaohua",

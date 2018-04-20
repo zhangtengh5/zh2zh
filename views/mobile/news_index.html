@@ -1,0 +1,32 @@
+{% extends './layout.html'%}
+{% block content%}
+<div class="header">
+  资讯中心
+</div>
+<div class="zt-news-box">
+  <div class="zt-news zt-content">
+    <ul>
+        {% for content in contents %}
+        <li>
+            <a href="/m_news/news_detail?page={{page}}&id={{content._id.toString()}}" class="news-item">
+                <div class="news-img">
+                    <img src="{{content.image}}" alt="">
+                </div>
+                <div class="news-title">
+                    <p class="text">	
+                        {{content.title}}
+                    </p>
+                    <p class="time">{{content.addTime|date('Y年m月d日', -8*60)}}</p>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+  </div>
+</div>
+{% include './page.html' %}
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block script %}
+{% endblock %}

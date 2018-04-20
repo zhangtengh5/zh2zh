@@ -197,6 +197,7 @@ router.get('/news/add', function(req, res, next){
   })
 })
 router.post('/news/add', function(req, res, next){
+  console.log(req.body.up_image)
   var image = req.body.image;
   var title = req.body.title;
   var describtion = req.body.describtion;

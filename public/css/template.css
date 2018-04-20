@@ -3,26 +3,26 @@
 .n_cont {
     background-repeat: no-repeat;
     background-position: center 0;
-    background-image: url('../images/589c39fc49629.jpg');
+    background-image: url('/public/images/589c39fc49629.jpg');
     padding: 230px 0 35px 0;
 }
 #about-wrapper .n_cont {
-    background-image: url('../images/about-bj.png');
+    background-image: url('/public/images/about-bj.png');
 }
 #product-wrapper .n_cont {
-    background-image: url('../images/product_bj.png');
+    background-image: url('/public/images/product_bj.png');
 }
 #career-wrapper .n_cont {
-    background-image: url('../images/carerr_bj.png');
+    background-image: url('/public/images/carerr_bj.png');
 }
 #honor-wrapper .n_cont {
-    background-image: url('../images/honor_bj.png');
+    background-image: url('/public/images/honor_bj.png');
 }
 #contact-wrapper .n_cont {
-    background-image: url('../images/contact_bj.png');
+    background-image: url('/public/images/contact_bj.png');
 }
 #news-wrapper .n_cont {
-    background-image: url('../images/news_bj.png');
+    background-image: url('/public/images/news_bj.png');
 }
 .wrap {
     background: #fff;

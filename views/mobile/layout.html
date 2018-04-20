@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>掌腾信息</title>
+  <link rel="stylesheet" href="/public/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/public/css/base.css">
+  <link rel="stylesheet" href="/public/css/m_index.css">
+  <link rel="stylesheet" href="/public/css/iconfont.css">
+  {% block css %} {% endblock %}
+</head>
+<body>
+  <div class="container-fluid">
+    {% block content%} {% endblock %}
+    <div class="tab-bar">
+      <ul>
+        <li class="tab-item growup">
+          <a href="/">
+            <i class="iconfont icon-shouye"></i>
+            <span class="text">首页</span>
+          </a>
+        </li>
+        <li class="tab-item product">
+          <a href="/m_product?id=0">
+            <i class="iconfont icon-chanpinguanli"></i>
+            <span class="text">产品</span>
+          </a>
+        </li>
+        <li class="tab-item about">
+          <a href="/m_about">
+            <i class="iconfont icon-guanyuwomen"></i>
+            <span class="text">掌腾</span>
+          </a>
+        </li>
+        <li class="tab-item news">
+          <a href="/m_news?page=1">
+            <i class="iconfont icon-quanbuxinwen"></i>
+            <span class="text">资讯</span>
+          </a>
+        </li>
+        <li class="tab-item contact">
+          <a href="/m_contact">
+            <i class="iconfont icon-lianxiwomen"></i>
+            <span class="text">联系</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="/public/js/jquery-1.10.1.min.js"></script>
+  <script src="/public/libs/bootstrap/js/bootstrap.min.js"></script>
+  <script>
+    function handleHref () {
+        var href = window.location.href;
+        var a = href.lastIndexOf('/')+1;
+        var b = href.lastIndexOf('?');
+        var str = '';
+        
+        if (b !== -1) {
+            str = href.substring(a, b);
+        } else {
+            str = href.substring(a);
+        }
+        return str;
+    }
+    var params = handleHref();
+    console.log(params)
+    switch(params) {
+      case 'm_product':
+        $('.tab-bar ul >li').eq(1).addClass('active')
+        break;
+      case 'm_about':
+        $('.tab-bar ul >li').eq(2).addClass('active')
+        break;
+      case 'm_news':
+        $('.tab-bar ul >li').eq(3).addClass('active')
+        break;
+      case 'news_detail':
+        $('.tab-bar ul >li').eq(3).addClass('active')
+        break;
+      case 'm_contact':
+        $('.tab-bar ul >li').eq(4).addClass('active')
+        break;
+      default:
+        $('.tab-bar ul >li').eq(0).addClass('active')
+    }
+  </script>
+  {% block script %} {% endblock %}
+</body>
+
+</html>

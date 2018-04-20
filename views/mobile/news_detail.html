@@ -1,0 +1,17 @@
+{% extends './layout.html'%}
+{% block content%}
+<div class="header">
+    <a href="{{url+'?page='+page}}"><i class="iconfont icon-fanhui"></i></a>资讯中心
+</div>
+<div class="news-details">
+    <h2 class="new-title"><strong>{{content.title}}</strong></h2>
+    <p class="new-time">发布时间：{{content.addTime|date('Y-m-d', -8*60)}}</p>
+    <div class="new-content">
+        {{content.content}}
+    </div>
+</div>
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block script %}
+{% endblock %}

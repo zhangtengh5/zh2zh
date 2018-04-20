@@ -1,0 +1,83 @@
+{% extends './layout.html'%}
+{% block content%}
+<div class="header">
+  联系我们
+</div>
+<div class="block-tab">
+  <ul>
+    <li class="active right"><span>掌腾地址</span></li>
+    <li><span>掌腾移动</span></li>
+  </ul>
+</div>
+<div class="block-content">
+  <ul>
+    <li class="contact-address show_li">
+      <div class="contact-image">
+        <img src="/public/images/map_adress.png" alt="">
+      </div>
+      <div class="address">
+          <h1>
+              <strong>公司地址：</strong>
+          </h1>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;公司总部：上海市静安区南京西路1038号梅龙镇广场</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;公司分部：上海市闵行区顾戴路2568号银石科技园</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;公司电话：(021)62875088</p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;邮编：200000</p>
+      </div>
+      <div class="address">
+        <h1>
+            <strong>公司热线电话：</strong>
+        </h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;(021)62875088</p>
+      </div>
+      <div class="address">
+        <h1>
+            <strong>公司邮箱：</strong>
+        </h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;zh2zh@zh2zh.com</p>
+      </div>
+      <div class="address">
+        <h1>
+            <strong>项目总监电话：</strong>
+        </h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;18149772839（王先生）</p>
+      </div>
+      <div class="address">
+        <h1>
+            <strong>市场总监邮箱：</strong>
+        </h1>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;liweizhen@zh2zh.com(李小姐)</p>
+      </div>
+    </li>
+    <li clas="contact-app">
+      <div class="app-items">
+        <div class="app-item">
+          <img src="/public/images/apple_code.png" width="122" height="122" alt="">
+          <h3>掌腾App(Android版)</h3>
+        </div>
+        <div class="app-item">
+          <img src="/public/images/apple_code.png" width="122" height="122" alt="">
+          <h3>掌腾App(IOS版)</h3>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block script %}
+<script>
+  var aTab = $('.block-tab ul > li');
+  var aContent = $('.block-content ul > li');
+  aTab.on('click', function() {
+    var index = $(this).index();
+    for (var i =0; i< aTab.length; i++) {
+      aTab.eq(i).removeClass('active');
+      aContent.eq(i).removeClass('show_li');
+    }
+    $(this).addClass('active');
+    aContent.eq(index).addClass('show_li');
+  })
+</script>
+{% endblock %}

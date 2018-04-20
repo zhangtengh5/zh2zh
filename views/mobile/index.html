@@ -1,0 +1,181 @@
+{% extends './layout.html'%}
+{% block content%}
+<div class="logo-box">
+    <img src="/public/images/top-logo.png" width="148" height="40" alt="">
+    <span>科技让梦想照进现实</span>
+</div>
+<div class="home_banner">
+    <div class="bd">
+        <ul>
+            <li class="li_01 li_item">
+                <a href="/m_product?id=1" class="li-div">
+                    <div class="bg"></div>
+                    <div class="img_one">
+                        <h3>掌&nbsp静&nbsp脉&nbsp识&nbsp别</h3>
+                        <p>高精度&nbsp&nbsp高速度&nbsp&nbsp更安全的生物识别方案</p>
+                    </div>
+                    <div class="img_two">查看详情</div>
+                </a>
+            </li>
+            <li class="li_02 li_item">
+                <div class="li-div">
+                    <div class="bg"></div>
+                    <div class="img_one">
+                        <div class="ani-txt"><span>掌静脉贩卖机</span></div>
+                    </div>
+                    <div class="img_two">
+                        <div class="ani-txt"><span>掌静脉闸机</span></div>
+                    </div>
+                    <div class="img_three">
+                        <div class="ani-txt"><span>掌静脉注册机</span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="btnDiv"></div>
+</div> 
+
+<div class="content-box">
+    <div class="title-box">
+        <div class="box-div">
+            <img src="/public/m_images/title_product.png" width="94" height="25"alt="">
+        </div>
+        <div class="box-div box-div-center">
+            <a href="javascript:;">
+                <img src="/public/m_images/bolck-more.png" width="50" height="24" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="entry">
+        <div class="entry-row">
+            <a href="/m_product?id=1" class="row-item">
+                <div class="img-box">
+                    <img src="/public/m_images/yl_icon.png" alt="">
+                </div>
+                <span class="text">掌静脉原理</span>
+            </a>
+            <a href="/m_product?id=2" class="row-item">
+                <div class="img-box">
+                    <img src="/public/m_images/dt_icon.png" alt="">
+                </div>
+                <span class="text">地铁通行</span>
+            </a>
+            <a href="/m_product?id=3" class="row-item">
+                <div class="img-box">
+                    <img src="/public/m_images/ns_icon.png" alt="">
+                </div>
+                <span class="text">无人超市</span>
+            </a>
+        </div>
+        <div class="entry-row">
+            <a href="/m_product?id=4" class="row-item">
+                <div class="img-box">
+                    <img src="/public/m_images/rzhy_icon.png" alt="">
+                </div>
+                <span class="text">认证合一</span>
+            </a>
+            <a href="/m_product?id=5" class="row-item">
+                <div class="img-box">
+                    <img src="/public/m_images/gl_icon.png" alt="">
+                </div>
+                <span class="text">系统管理</span>
+            </a>
+            <a href="/m_product?id=6" class="row-item">
+                <div class="img-box">
+                    <img src="/public/m_images/zf_icon.png" alt="">
+                </div>
+                <span class="text">商业支付</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="content-box">
+    <div class="title-box">
+        <div class="box-div">
+            <img src="/public/m_images/title_about.png" width="94" height="25"alt="">
+        </div>
+        <div class="box-div box-div-center">
+            <a href="/m_about">
+                <img src="/public/m_images/bolck-more.png" width="50" height="24" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="zt-about zt-content">
+        <div class="about-img">
+            <img src="/public/m_images/about_pic.jpg" width="100%" height="" alt="">
+        </div>
+        <div class="about-text">
+            科技让梦想照进生活！掌腾公司作为一家高科技公司，以生物识别技术为核心，着眼于打造生物识别的支付生态，有志于成为该领域领航者。
+        </div>
+    </div>
+</div>
+<div class="content-box">
+    <div class="title-box">
+        <div class="box-div">
+            <img src="/public/m_images/title_news.png" width="94" height="25"alt="">
+        </div>
+        <div class="box-div box-div-center">
+            <a href="/m_news?page=1">
+                <img src="/public/m_images/bolck-more.png" width="50" height="24" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="zt-news zt-content">
+        <ul>
+            {%for content in contentArr %}
+            <li>
+                <a href="/m_news/news_detail?page=1&id={{content._id.toString()}}" class="news-item">
+                    <div class="news-img">
+                        <img src="{{content.image}}" alt="">
+                    </div>
+                    <div class="news-title">
+                        <p class="text">	
+                            {{content.title}}
+                        </p>
+                        <p class="time">{{content.addTime|date('Y年m月d日', -8*60)}}</p>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="content-box">
+    <div class="title-box">
+        <div class="box-div">
+            <img src="/public/m_images/tittle_partner.png" width="94" height="25"alt="">
+        </div>
+        <div class="box-div box-div-center"></div>
+    </div>
+    <div class="entry zt-customer">
+        <ul class="entry-row entry-row-f">
+            <li class="row-item"></li>
+            <li class="row-item"></li>
+            <li class="row-item"></li>
+        </ul>
+        <ul class="entry-row entry-row-s">
+            <li class="row-item"></li>
+            <li class="row-item"></li>
+            <li class="row-item"></li>
+        </ul>
+        <ul class="entry-row entry-row-t">
+            <li class="row-item"></li>
+            <li class="row-item"></li>
+            <li class="row-item"></li>
+        </ul>
+    </div>
+</div>
+<div class="content-box">
+    <div class="copyright">
+        <p>Copyright ©2016 zh2zh.com All Right Reserved 上海掌腾信息科技有限公司<br/>沪ICP备16028310号&nbsp;&nbsp;沪公网安备31010602001155号</p>
+    </div>
+</div>
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block script %}
+<script src="/public/js/jquery.superslide.2.1.1.js"></script>
+<script src="/public/js/m_home.js"></script>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends './layout.html'%}
+{% block content%}
+<div class="header">
+    <a href="/m_product?id=0"><i class="iconfont icon-fanhui"></i></a>掌静脉识别原理
+</div>
+<div class="detail">
+  <ul class="content-lists">
+      <li class="content-list">
+          <h1 class="list-name">
+              <strong>基本原理</strong>  
+          </h1>
+          <div class="list-image">
+              <img src="/public/images/20170207103123_6881.png" width="300" height="238" alt="">
+          </div>
+          <div class="list-txt">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;掌静脉识别技术是利用近红外线照射手掌，并由传感器感应手掌反射的光。其中的关键在于流到静脉红血球中的血红蛋白对波长760nm附近的近红外线会有吸收，导致静脉部分的反射较少，在影像上就会产生静脉图案。静脉识别是利用反射近红外线的强弱来辨认静脉的位置。然后通过读取的静脉数据与预先存储的手掌静脉数据进行对比，运用先进的滤波、图像二值化、细化手段对数字图像提取特征，同存储在主机中静脉特征值比对，采用复杂的匹配算法对静脉特征进行匹配，从而对个人进行身份鉴定，确认使用者的身份和信息。掌静脉位于皮肤以下3毫米处，属人体内部信息，目前尚无复制的成功案例，具备活体检知功能，认证时数据传输使用AES（Advanced Encryption Standard）方式加密，杜绝数据外泄风险。</p>
+          </div>
+      </li>
+      <li class="content-list">
+          <h1 class="list-name">
+              <strong>技术特点</strong>  
+          </h1>
+          <div class="list-image">
+              <img src="/public/images/20170207103322_4514.jpg" width="285" height="230" alt="">
+          </div>
+          <div class="list-txt">
+              <p><strong>活体识别：</strong>用掌静脉进行身份认证时，获取的是掌静脉的图像特征，是掌活体时才存在的特征。在该系统中，非活体的手掌是得不到静脉图像特征的，因而无法识别，从而也就无法造假。</p>
+              <p><strong>唯一身份：</strong>用掌静脉进行身份认证时，获取的是手掌内部的静脉图像特征，而不是手掌表面的图像特征。因此，不存在任何由于手掌表面的损伤、磨损、干燥或太湿等带来的识别障碍。</p>
+              <p><strong>非接触性：</strong>用掌静脉进行身份认证，获取手掌静脉图像时，手掌无须与设备接触，轻轻一放，即可完成识别。在卫生方面使用者无抵触感，特别适合于不特定多数人员使用。</p>
+              <p><strong>安全性高：</strong>因为有了前面的活体识别、内部特征和非接触式3个方面的特征，确保了使用者的掌静脉特征很难被伪造。与其他生物特征认证相比，掌静脉血管多而复杂，识别精度高，而且血管粗耐寒能力高，安全稳定性好。</p>
+          </div>
+      </li>
+      <li class="content-list">
+          <h1 class="list-name">
+              <strong>应用场景</strong>  
+          </h1>
+          <div class="list-image">
+              <img src="/public/images/20170207104042_5308.jpg" width="270" height="170" alt="">
+          </div>
+          <div class="list-txt">
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;掌静脉识别技术，不仅拥有高科技感的乐趣，还有强大的安全系数，因具备高兼容性的特点，可为不同类人群带来高效便捷，稳定安全的生活环境。</p>
+          </div>
+      </li>
+  </ul>
+</div>
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block script %}
+{% endblock %}

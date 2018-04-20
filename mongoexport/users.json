@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5ac1d0844fd2102418f02806"},"isAdmin":true,"isManage":true,"username":"zh2zh","password":"c28fe390ef8865ef6454a711b89160ef54867a05","__v":0}
+{"_id":{"$oid":"5ac1d09e4fd2102418f02807"},"isAdmin":true,"isManage":false,"username":"admin","password":"d033e22ae348aeb5660fc2140aec35850c4da997","__v":0}
+{"_id":{"$oid":"5ac1d1da21cfee4b4008d040"},"isAdmin":true,"isManage":false,"username":"test","password":"cd3f0c85b158c08a2b113464991810cf2cdfc387","__v":0}

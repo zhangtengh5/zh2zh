@@ -1,19 +1,12 @@
 var express = require('express');
-var app = express();
 var path = require('path');
-var swig = require('swig');
-var mongoose = require('mongoose');
+var config = require('config-lite')(__dirname);
 var bodyParser = require('body-parser');
 var Cookies = require('cookies');
 var User = require('./models/User');
-var config = require('config-lite')(__dirname);
 var ueditor = require("ueditor");
-app.use('/public',express.static(path.join(__dirname, 'public')));
+var app = require('./base.js');
 app.use(express.static(path.join(__dirname, 'uditors')));
-app.engine('html', swig.renderFile);
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-swig.setDefaults({cache: false, autoescape: false});
 
 //post提交过来的数据
 app.use(bodyParser.urlencoded({extended: true}));
@@ -73,17 +66,6 @@ app.use('/admin', require('./routers/admin.js'));
 app.use('/api', require('./api/api.js'));
 app.use('/', require('./routers/router.js'));
 
-mongoose.connect(config.mongodb, function(err) {
-    if (err) {
-        console.warn('数据库连接失败')
-    } else {
-        console.log('数据库连接成功')
-        if(module.parent) {
-            module.exports = app
-        } else {
-            app.listen(config.port, function(){
-                console.log(`运行端口号为: http://localhost:${config.port}`)
-            })
-        } 
-    }
+app.listen(config.app.port, function() {
+    console.log(`运行端口号为:${config.app.port}`)
 })

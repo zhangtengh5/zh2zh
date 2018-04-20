@@ -1,0 +1,9 @@
+<div class="pager-box">
+    <nav>
+        <ul class="pagers">
+            <li><a href="{{url}}?page={{Math.max(1, page-1)}}"><span aria-hidden="true">&laquo;</span></a></li>
+            <li>{{page}}/<strong>{{pages}}</strong></li>
+            <li><a href="{{url}}?page={{Math.min(page+1, pages)}}"><span aria-hidden="true">&raquo;</span></a></li>
+        </ul>
+    </nav>
+</div>

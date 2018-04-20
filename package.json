@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "SET NODE_ENV=production&&pm2 start app.js",
-    "start": "supervisor –harmony app"
+    "start": "supervisor –harmony app",
+    "dev": "supervisor –harmony m.app"
   },
   "author": "shaohua",
   "license": "ISC",
@@ -20,6 +20,7 @@
     "express": "^4.16.3",
     "express-formidable": "^1.0.0",
     "express-session": "^1.15.6",
+    "express-useragent": "^1.0.12",
     "express-winston": "^2.5.0",
     "marked": "^0.3.19",
     "moment": "^2.21.0",

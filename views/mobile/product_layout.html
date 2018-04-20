@@ -1,0 +1,26 @@
+{% extends './layout.html'%}
+{% block content%}
+<div class="header">
+    <a href="/m_product?id=0"><i class="iconfont icon-fanhui"></i></a>产品方案
+</div>
+<div class="product-content">
+    <div class="left-nav">
+        <ul>
+            <li class="active"><a href="/m_product?id=0">掌静脉原理</a></li>
+            <li><a href="/m_product?id=1">地铁通行</a></li>
+            <li><a href="/m_product?id=2">无人超市</a></li>
+            <li><a href="/m_product?id=3">人证合一</a></li>
+            <li><a href="/m_product?id=4">系统管理</a></li>
+            <li><a href="/m_product?id=5">商业支付</a></li>
+        </ul>
+    </div>
+    <div class="right-content">
+        {% block product %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
+{% block link %}
+{% endblock %}
+{% block script %}
+{% endblock %}

@@ -2,13 +2,13 @@ var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
 var sha1 = require('sha1');
-let responseData;
+var responseData;
 router.use(function(req, res, next){
     responseData = {
         code: 0,
         message: ''
     }
-    next()
+    next();
 })
 router.post('/user/login', function(req, res, next){
   var username = req.body.username;

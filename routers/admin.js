@@ -4,7 +4,7 @@ var User = require('../models/User');
 var News = require('../models/News')
 var path = require('path');
 var sha1 = require('sha1');
-
+var uploads= require('./multer.js')
 router.use(function(req, res, next) {
   if(!req.userInfo.isAdmin) {
       res.redirect('/login')
@@ -196,16 +196,16 @@ router.get('/news/add', function(req, res, next){
     userInfo: req.userInfo
   })
 })
-router.post('/news/add', function(req, res, next){
-  console.log(req.body.up_image)
-  var image = req.body.image;
+router.post('/news/add', uploads.single('image'), function(req, res, next){
+  var image = req.file.filename;
   var title = req.body.title;
   var describtion = req.body.describtion;
   var newscontent = req.body.editorValue;
-  if (!(image && title && describtion && newscontent)) {
+  var addTime = req.body.addTime;
+  if (!(image && title && describtion && newscontent && addTime)) {
     res.render('servers/error', {
       userInfo: req.userInfo,
-      message: '标题、概括、内容都不能为空',
+      message: '标题、概括、时间、内容都不能为空',
       url: '/admin/news/add'
     })
   } else {
@@ -224,7 +224,8 @@ router.post('/news/add', function(req, res, next){
           title: title,
           describtion: describtion,
           content: newscontent,
-          image: image
+          image: image,
+          addTime: addTime
         }).save()
       }
     }).then(function(newConetent){
@@ -253,11 +254,13 @@ router.get('/news/edit', function(req, res, next){
 })
 router.post('/news/edit', function(req, res, next){
   var id = req.query.id || '';
+  console.log(id)
+  var image = req.body.saveImage;
   var title = req.body.title;
   var describtion = req.body.describtion;
   var newscontent = req.body.editorValue;
-  var image = req.body.image;
-  if (!(image && title && describtion && newscontent)) {
+  var addTime = req.body.addTime;
+  if (!(title && describtion && newscontent)) {
     res.render('servers/error', {
       userInfo: req.userInfo,
       message: '标题、概括、内容都不能为空',
@@ -267,6 +270,7 @@ router.post('/news/edit', function(req, res, next){
     News.findById({
       _id: id
     }).then(function(content){
+      console.log(1111)
       if (!content) {
         res.render('servers/error', {
           userInfo: req.userInfo,
@@ -295,6 +299,7 @@ router.post('/news/edit', function(req, res, next){
           title: title,
           describtion: describtion,
           content: newscontent,
+          addTime: addTime,
           image: image
         })
       }

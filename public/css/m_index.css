@@ -441,6 +441,12 @@ body {
   flex: 1;
   font-size: 12px;
 }
+.mobile-new-content {
+  width: 100%;
+}
+.mobile-new-content img {
+  width: 100%;
+}
 /* zt-customer */
 .zt-customer ul li {
   background-repeat: no-repeat;

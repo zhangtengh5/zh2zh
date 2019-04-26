@@ -6,12 +6,17 @@
 <div class="news-details">
     <h2 class="new-title"><strong>{{content.title}}</strong></h2>
     <p class="new-time">发布时间：{{content.addTime|date('Y-m-d', -8*60)}}</p>
-    <div class="new-content">
+    <div class="new-content mobile-new-content">
         {{content.content}}
+    </div>
+    <div class="share-box">
+        <div class="social-share" style="text-align: center;"data-disabled="google,twitter,facebook,diandian,linkedin"></div>
     </div>
 </div>
 {% endblock %}
-{% block link %}
+{% block css %}
+<link rel="stylesheet" href="/public/libs/share.js-master/dist/css/share.min.css">
 {% endblock %}
 {% block script %}
+<script src="/public/libs/share.js-master/dist/js/social-share.min.js"></script>
 {% endblock %}

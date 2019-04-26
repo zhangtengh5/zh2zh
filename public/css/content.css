@@ -198,6 +198,12 @@
 .news_content p {
     font-size: 14px;
 }
+.pc_news_content {
+    width: 100%;
+}
+.pc_news_content img {
+    width: 100%;
+}
 /* share  */
 
 .share {

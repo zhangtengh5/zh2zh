@@ -1,13 +1,22 @@
 var express = require('express');
+var app = express();
 var path = require('path');
+var swig = require('swig');
+var mongoose = require('mongoose');
 var config = require('config-lite')(__dirname);
+var useragent = require('express-useragent');
 var bodyParser = require('body-parser');
 var Cookies = require('cookies');
 var User = require('./models/User');
 var ueditor = require("ueditor");
-var app = require('./base.js');
+require('events').EventEmitter.defaultMaxListeners = 0;
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.engine('html', swig.renderFile);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+swig.setDefaults({cache: false, autoescape: false});
+app.use(useragent.express());
 app.use(express.static(path.join(__dirname, 'uditors')));
-
 //post提交过来的数据
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -33,6 +42,7 @@ app.use(function(req, res, next) {
         next()
     }
 })
+
 app.use("/ueditor/ue", ueditor(path.join(__dirname), function(req, res, next) {
     // ueditor 客户发起上传图片请求
   
@@ -59,13 +69,21 @@ app.use("/ueditor/ue", ueditor(path.join(__dirname), function(req, res, next) {
       // 这里填写 ueditor.config.json 这个文件的路径
       res.redirect('/ueditor/nodejs/config.json');
 }}));
+
 /* 
     根据不同的功能划分模块
  */
 app.use('/admin', require('./routers/admin.js'));
 app.use('/api', require('./api/api.js'));
 app.use('/', require('./routers/router.js'));
-
-app.listen(config.app.port, function() {
-    console.log(`运行端口号为:${config.app.port}`)
+mongoose.connect(config.mongodb, function(err) {
+    if (err) {
+        console.warn('数据库连接失败');
+    } else {
+        console.log('数据库连接成功');
+        app.listen(config.app.port, function() {
+            console.log(`http://localhost:${config.app.port}`);
+        })
+    }
 })
+

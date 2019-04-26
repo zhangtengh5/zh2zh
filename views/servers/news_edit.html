@@ -13,12 +13,16 @@
 <div class="form-box">
   <form method="post">
     <div class="form-group">
-      <label for="image">新闻图片</label>
-      <input type="text" class="form-control" name="image" id="image" value="{{content.image}}">
+      <img src="/public/images/ueditor/{{content.image}}" alt="" width="150px" height="100px">
+      <input type="hidden" value="{{content.image}}" name="saveImage" id="saveImage">
     </div>
     <div class="form-group">
       <label for="title">新闻标题</label>
       <input type="text" class="form-control" name="title" id="title" value="{{content.title}}">
+    </div>
+    <div class="form-group">
+      <label for="addTime">新闻时间  输入例如2018-09-12</label>
+      <input type="text" class="form-control" name="addTime" id="addTime" value="{{content.addTime}}">
     </div>
     <div class="form-group">
       <label for="describtion">新闻概括</label>

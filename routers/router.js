@@ -40,6 +40,9 @@ router.get('/about/:name', function (req, res, next) {
     case 'road':
       res.render('clients/about/about_road');
       break;
+    case 'chongqi':
+      res.render('clients/about/about_chongqing');
+      break;
     default:
       res.render('clients/about/about')
   }
